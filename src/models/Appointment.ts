@@ -3,17 +3,14 @@ import { uuid } from 'uuidv4';
 class Appointment {
   id: string;
 
-  title: string;
+  provider: string;
 
-  value: number;
+  date: Date;
 
-  type: 'income' | 'outcome';
-
-  constructor({ title, value, type }: Omit<Appointment, 'id'>) {
+  constructor({ provider, date }: Omit<Appointment, 'id'>) {
     this.id = uuid();
-    this.title = title;
-    this.value = value;
-    this.type = type;
+    this.provider = provider;
+    this.date = date;
   }
 }
 
